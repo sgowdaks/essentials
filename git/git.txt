@@ -1,0 +1,20 @@
+git config --global user.name "sgowdaks"
+git config --global user.email shi*******@gmail.com
+
+git --help
+
+git config --list
+>>user.name=sgowdaks
+>>user.email=shi******@gmail.com
+
+git init
+<to set up .git>
+git status
+git add .
+git commit -m "commiting to the File"
+git log
+
+git remote add origin "File Name"
+git remote -v
+git push -u origin master
+
