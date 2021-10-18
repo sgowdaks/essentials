@@ -26,4 +26,10 @@ git merge shivani    // merges shivani to the master branch while u are in maste
 git help <merge/push/status/branch>
 git log --pretty=oneline
 git reset --soft <comit_name(that u wnat to go back to)>
+git revert <revert number>
+git branch <branch_name> //creates a new branch
+git branch -v //gives out all the branches
+git push -u origin shivani // when i wnat to push shivani branch
+git branch -D <branch to be deleted>   //deleted the branch locally
+git push origin --delete <branch name>
 
