@@ -18,3 +18,10 @@ git remote add origin "File Name"
 git remote -v
 git push -u origin master
 
+
+git branch -a       //to check the if there is a new branch or the present branch
+git branch -c shivani  //new branch with the new shivani 
+git checkout shivani  // switched to branch called shivani
+git merge shivani    // merges shivani to the master branch while u are in master branch 
+git help <merge/push/status/branch>
+
