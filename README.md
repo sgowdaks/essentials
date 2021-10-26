@@ -1,2 +1,2 @@
 # javaProject
-the files uploded above are for my references only, and it is noteded down by various sites and youtube channels.
+the files uploded above are for my references only, and it was noted down by various sites and youtube channels.
