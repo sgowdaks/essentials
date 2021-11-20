@@ -1,0 +1,13 @@
+context => this (global, local)
+closure => function that does not die after execution, it still holds value and so that we can use it later
+
+function help(){
+    var k = "Shivani"
+    return function helpe(){
+        console.log("Hello " +k)
+    }
+    
+}
+
+var value = help()
+value()
