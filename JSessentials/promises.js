@@ -22,3 +22,23 @@ const add = async() => {
 add().then(() => {console.log("added")}).catch((e) =>{
     console.log(e)
 })
+
+-------------------------------------*****************************---------------------------
+
+const buyFlightTicket = () => {
+    return new Promise((resolve, reject) => {
+        const val = false;
+        if(val){
+            resolve("hey its resolved")
+        }else{
+            reject("hey this is not resolved")
+        }
+    })
+}
+
+buyFlightTicket()
+.then((sucess) => 
+    console.log(sucess)
+).catch((error) => 
+    console.log(error)
+)
