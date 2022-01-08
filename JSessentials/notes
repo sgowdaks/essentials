@@ -29,3 +29,30 @@ fetch('https://jsonplaceholder.typicode.com/comments', {
     })
     .then((response) => response.json())
     .then((data) => console.log(data))
+    
+    -----------------------------------------------**************************-----------------------------------------
+    export class Animal {
+    constructor(type, legs) {
+        this.type = type;
+        this.legs = legs;
+    }
+    
+    makeNoise(sound = 'Loud Noise') {
+        console.log(sound);
+    }
+    
+    get metaData() {
+        return `Type: ${this.type}, Legs: ${this.legs}`;
+    }
+    
+    static return10() {
+        return 10;
+    }
+}
+
+import { Animal } from './animal.js';
+
+let cat = new Animal('Cat', 4);    //instantiation
+console.log(cat.metaData)             // Type: Cat, Legs: 4 (here get is treated has property instaed of )
+console.log(cat.makeNoise())
+console.log(Animal.return10())      //as animal is described as static it still runs withou instantiation
