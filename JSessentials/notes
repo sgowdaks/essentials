@@ -56,3 +56,12 @@ let cat = new Animal('Cat', 4);    //instantiation
 console.log(cat.metaData)             // Type: Cat, Legs: 4 (here get is treated has property instaed of )
 console.log(cat.makeNoise())
 console.log(Animal.return10())      //as animal is described as static it still runs withou instantiation
+
+
+-------------------------------****************--------------------------
+export class Cat extends Animal {
+    constructor(type, legs, tail) {
+        super(type, legs);
+        this.tail = tail;
+    }
+}
