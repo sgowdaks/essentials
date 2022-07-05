@@ -1,0 +1,4 @@
+Some usefull bash commands:
+paste -d ',' new_meta_166.csv out.txt > new_data.csv  = pasting 2 files "," delimeter
+cat meta_166.csv | sed "s/\r//g" > new_meta_166.csv = sed(stream editor) from start to all the globals (for windows to unix)
+wc - l = counting the number of lines in a file
