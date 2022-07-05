@@ -3,3 +3,5 @@ paste -d ',' new_meta_166.csv out.txt > new_data.csv  = pasting 2 files "," deli
 cat meta_166.csv | sed "s/\r//g" > new_meta_166.csv = sed(stream editor) from start to all the globals (for windows to unix)
 wc - l = counting the number of lines in a file
 seq -1 10 = for getting numbers from -1 to 10
+scp -r sks@****:/home/**/ . = for downloading files inside directory, from server.
+ls ../img/*/ -d | while read i; do for j in $i/*.jpg; do cp $j .; done; done ^C = to copy all the images in a directory's subdirectory
