@@ -1,21 +1,21 @@
 # Some usefull bash commands:
-* paste -d ',' new_meta_166.csv out.txt > new_data.csv  = pasting 2 files "," delimeter
-* cat meta_166.csv | sed "s/\r//g" > new_meta_166.csv = sed(stream editor) from start to all the globals (for windows to unix)
-* wc - l = counting the number of lines in a file
-* seq -1 10 = for getting numbers from -1 to 10
-* scp -r sks@****:/home/**/ . = for downloading files inside directory, from server.
-* ls ../img/*/ -d | while read i; do for j in $i/*.jpg; do cp $j .; done; done ^C = to copy all the images in a directory's subdirectory
-* grep -o -E "(\w)+" file_name.csv | sort | uniq -c | sort -nr > unique.txt -> to find the unique words in a file, with dictinorey
-* Get-NetAdapter | Where-Object {$_.InterfaceDescription -Match "Cisco AnyConnect"} | Set-NetIPInterface -InterfaceMetric 6000 --> to make internet work on Cisco VPN
-* jupyter lab  --ip 0.0.0.0 (strting jupyter lab from server) 
-* gpustat -i 0.5  -> to check GPU utilization
+* `paste -d ',' new_meta_166.csv out.txt` > new_data.csv  = pasting 2 files "," delimeter
+* `cat meta_166.csv | sed "s/\r//g" > new_meta_166.csv` = sed(stream editor) from start to all the globals (for windows to unix)
+* `wc - l` = counting the number of lines in a file
+* `seq -1 10` = for getting numbers from -1 to 10
+* `scp -r sks@****:/home/**/ .` = for downloading files inside directory, from server.
+* `ls ../img/*/ -d | while read i; do for j in $i/*.jpg; do cp $j .; done; done` ^C = to copy all the images in a directory's subdirectory
+* `grep -o -E "(\w)+" file_name.csv | sort | uniq -c | sort -nr > unique.txt` -> to find the unique words in a file, with dictinorey
+* `Get-NetAdapter | Where-Object {$_.InterfaceDescription -Match "Cisco AnyConnect"} | Set-NetIPInterface -InterfaceMetric 6000` --> to make internet work on Cisco VPN
+* `jupyter lab  --ip 0.0.0.0` (strting jupyter lab from server) 
+* `gpustat -i 0.5`  -> to check GPU utilization
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
 * `Ctrl b + c` -> create new window in same session 
 * `Ctrl b + d` -> dettach from session
-* tmux a -> tmux attach session
-* tmux ls -> list of session in tmux
+* `tmux a` -> tmux attach session
+* `tmux ls` -> list of session in tmux
 * `Ctrl b + %` -> for splitting the window vertically
 * `Ctrl b + left/right arrow` -> to switch bwt panels
 * `Ctrl b + [` -> starts scrolling, and up and down arrow, `q` -> to quit
