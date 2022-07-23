@@ -10,6 +10,8 @@
 * `jupyter lab  --ip 0.0.0.0` (strting jupyter lab from server) 
 * `gpustat -i 0.5`  -> to check GPU utilization
 * `lsof -i :<port number>` -> for obtaining PID with process ID
+* `jobs` -> lists out all the jobs
+* `fg` -< foreground, brings the recently backgrounded process to the front
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
