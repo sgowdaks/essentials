@@ -9,6 +9,7 @@
 * `Get-NetAdapter | Where-Object {$_.InterfaceDescription -Match "Cisco AnyConnect"} | Set-NetIPInterface -InterfaceMetric 6000` --> to make internet work on Cisco VPN
 * `jupyter lab  --ip 0.0.0.0` (strting jupyter lab from server) 
 * `gpustat -i 0.5`  -> to check GPU utilization
+* `lsof -i :<port number>` -> for obtaining PID with process ID
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
