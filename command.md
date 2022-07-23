@@ -27,5 +27,6 @@
   * `nvidia-smi`
   * `gpustat`
 * `free -h` ->  RAM in computer
+* `export CUDA_VISIBLE_DEVICES=1`  -> to set a particular GPU machine
 
 
