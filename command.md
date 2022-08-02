@@ -9,6 +9,7 @@
 * `Get-NetAdapter | Where-Object {$_.InterfaceDescription -Match "Cisco AnyConnect"} | Set-NetIPInterface -InterfaceMetric 6000` --> to make internet work on Cisco VPN
 * `jupyter lab  --ip 0.0.0.0` (strting jupyter lab from server) 
 * `gpustat -i 0.5`  -> to check GPU utilization
+* `code-server --bind-addr 0.0.0.0:8080` -> to start code-server
 * `lsof -i :<port number>` -> for obtaining PID with process ID
 * `jobs` -> lists out all the jobs
 * `fg` -< foreground, brings the recently backgrounded process to the front
