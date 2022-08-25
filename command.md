@@ -33,4 +33,8 @@
 * `free -h` ->  RAM in computer
 * `export CUDA_VISIBLE_DEVICES=1`  -> to set a particular GPU machine
 
+## Emacs
+* `ctrl X + ctrl s` -> to save a file
+* `ctrl X + ctrl c` -> to exit the file
+
 
