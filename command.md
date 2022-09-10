@@ -12,7 +12,8 @@
 * `code-server --bind-addr 0.0.0.0:8080` -> to start code-server
 * `lsof -i :<port number>` -> for obtaining PID with process ID
 * `jobs` -> lists out all the jobs
-* `fg` -< foreground, brings the recently backgrounded process to the front
+* `fg` -> foreground, brings the recently backgrounded process to the front
+* `ln -s [source] [destination]` -> symbolic_link
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
