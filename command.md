@@ -38,4 +38,6 @@
 * `ctrl X + ctrl s` -> to save a file
 * `ctrl X + ctrl c` -> to exit the file
 
+## Code server
+`ctrl+shift+p` -> to open command pannel in code server
 
