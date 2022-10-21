@@ -14,6 +14,7 @@
 * `jobs` -> lists out all the jobs
 * `fg` -> foreground, brings the recently backgrounded process to the front
 * `ln -s [source] [destination]` -> symbolic_link
+* `ls -d img_166/*/ | while read i; do ls -1 $i/*.jpg; done > output.txt` -> to copy the path of all images in a subdirectory to an output file (ex: img_166/xyz/xyzz.jpg)
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
