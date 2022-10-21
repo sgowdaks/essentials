@@ -18,6 +18,19 @@
 * `shuf output.txt > output_shuf.txt` -> To shuffel lines indside a text file
 * `sed '1,660d' train.txt > test.txt` -> copy lines 1 to 660 from train.txt and put it to text.txt
 
+
+## awk
+NR -> number of record
+$0 -> literally prints that line itself
+NF -> number of feilds
+* `head shuf_output.txt  | awk '{print NR,"--->  "$0;}'` -> prints the record number + the -----> and first line itself (ex: 1 --->  img_166/eggs_benedict//7791.jpg)
+* `cat shuf_output.txt  | awk 'NR > 1000 && NR < 10000'` -> prints all the record that is greater than 1000 and less then 10000
+* `head shuf_output.txt  | awk -F '/' '{print NF}'` -> prints the number of feild for each line
+* `head shuf_output.txt  | awk -F '/' '{print $0}'` -> prints everything in first feild
+* `head shuf_output.txt  | awk -F '/' '{print $1}'` -> prints everything in second feild
+
+
+
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
 * `Ctrl b + c` -> create new window in same session 
