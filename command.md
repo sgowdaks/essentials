@@ -17,6 +17,9 @@
 * `ls -d img_166/*/ | while read i; do ls -1 $i/*.jpg; done > output.txt` -> to copy the path of all images in a subdirectory to an output file (ex: img_166/xyz/xyzz.jpg)
 * `shuf output.txt > output_shuf.txt` -> To shuffel lines indside a text file
 * `sed '1,660d' train.txt > test.txt` -> copy lines 1 to 660 from train.txt and put it to text.txt
+* `j=$(echo $i | awk -F '/' '{print $2}')` -> giving the 2nd feild
+* `cat paths.val.txt | while read i; do  j=val/$(echo $i | awk -F '/' '{print $2}')/; if [[ ! -d $j ]]; then mkdir $j; fi; echo "cp ../$i $j"; done'` -> 
+   each path from val is taken, and inide val folder we are extracting the 2nd feild, then we are checking if the feild is alredy created, if not we will create else      we wont, echo is just prinitng the path. 
 
 
 ## awk
