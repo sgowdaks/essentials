@@ -16,6 +16,7 @@
 * `ln -s [source] [destination]` -> symbolic_link
 * `ls -d img_166/*/ | while read i; do ls -1 $i/*.jpg; done > output.txt` -> to copy the path of all images in a subdirectory to an output file (ex: img_166/xyz/xyzz.jpg)
 * `shuf output.txt > output_shuf.txt` -> To shuffel lines indside a text file
+* `sed '1,660d' train.txt > test.txt` -> remove lines 1 to 660 from train.txt and put it to text.txt
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
