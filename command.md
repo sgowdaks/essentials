@@ -31,7 +31,7 @@ NF -> number of feilds
 * `head shuf_output.txt  | awk -F '/' '{print NF}'` -> prints the number of feild for each line
 * `head shuf_output.txt  | awk -F '/' '{print $0}'` -> prints everything in first feild
 * `head shuf_output.txt  | awk -F '/' '{print $1}'` -> prints everything in second feild
-
+* `cat output_vilt_single_label.txt | awk -v ORS='' '{print $0, NR % 2 ? "\t": "\n"}'  | sed 's/predicted answer:  //;s/actual answer : //' > output_vilt_single_label.tsv` -> converts (pred = "" (nextline) ground = "") to tab seperated format.   
 
 
 ## Tmux
