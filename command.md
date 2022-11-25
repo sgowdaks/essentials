@@ -3,7 +3,6 @@
 * `cat meta_166.csv | sed "s/\r//g" > new_meta_166.csv` = sed(stream editor) from start to all the globals (for windows to unix)
 * `wc - l` = counting the number of lines in a file
 * `seq -1 10` = for getting numbers from -1 to 10
-* `scp -r sks@****:/home/**/ .` = for downloading files inside directory, from server.
 * `ls ../img/*/ -d | while read i; do for j in $i/*.jpg; do cp $j .; done; done` ^C = to copy all the images in a directory's subdirectory
 * `grep -o -E "(\w)+" file_name.csv | sort | uniq -c | sort -nr > unique.txt` -> to find the unique words in a file, with dictinorey
 * `Get-NetAdapter | Where-Object {$_.InterfaceDescription -Match "Cisco AnyConnect"} | Set-NetIPInterface -InterfaceMetric 6000` --> to make internet work on Cisco VPN
@@ -20,8 +19,19 @@
 * `j=$(echo $i | awk -F '/' '{print $2}')` -> giving the 2nd feild
 * `cat paths.val.txt | while read i; do  j=val/$(echo $i | awk -F '/' '{print $2}')/; if [[ ! -d $j ]]; then mkdir $j; fi; echo "cp ../$i $j"; done'` -> 
    each path from val is taken, and inide val folder we are extracting the 2nd feild, then we are checking if the feild is alredy created, if not we will create else      we wont, echo is just prinitng the path. 
+   
+   
+## ssh
+* `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
+* `scp -r sks@****:/home/**/ .` = for downloading files inside directory, from server.
+* `cat ~/.ssh/config` -> setting up config file
+* `Host dvbx
+  User sg
+  HostName 192.000.0.000 `  -> creating alias in your config file
+  
 
 
+ 
 ## awk
 NR -> number of record
 $0 -> literally prints that line itself
