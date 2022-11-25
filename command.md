@@ -46,7 +46,7 @@ NF -> number of feilds
 * `Ctrl b + Ctrl left/right` -> to window resize
 
 ## Monetering resources
-* Moniter CPU and RAM -> `htop`
+* Moniter CPU  -> `htop`
 * Moniter GPU -> 
   * `nvidia-smi`
   * `gpustat`
