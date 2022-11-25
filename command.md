@@ -50,7 +50,8 @@ NF -> number of feilds
 * Moniter GPU -> 
   * `nvidia-smi`
   * `gpustat`
-* `free -h` ->  RAM in computer
+* `free -h` -> RAM in computer
+* `df -h` -> for memory available
 * `export CUDA_VISIBLE_DEVICES=1`  -> to set a particular GPU machine
 
 ## Emacs
