@@ -12,7 +12,7 @@
   * Redirection messages (300 – 399)
   * Client error responses (400 – 499)
   * Server error responses (500 – 599). refer https://developer.mozilla.org/en-US/docs/Web/HTTP/Status for more
-* common HTTP headers
+* Common HTTP headers
   * Request headers 
   * Resposnse headers 
   * Representation header
