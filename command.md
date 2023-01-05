@@ -72,3 +72,8 @@ NF -> number of feilds
 ## Code server
 `ctrl+shift+p` -> to open command pannel in code server
 
+## tar, gunzip and untar, unzip file
+* `tar -cvzf <to be named as>.tar.gz <file path/name>`
+* `gunzip filename.tar.gz`
+* `tar -xvf filename.tar`
+
