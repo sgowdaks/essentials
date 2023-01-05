@@ -25,6 +25,7 @@
 ## ssh
 * `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
 * `scp -r sks@****:/home/**/ .` = for downloading files inside directory, from server.
+* `scp -i ~/.ssh/filename.pem pixai.tar.gz ubtu@00.000.000.000:<folder name>` => move using .pem file
 * `cat ~/.ssh/config` -> setting up config file
 * `Host dvbx
   User sg
