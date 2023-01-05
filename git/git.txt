@@ -33,3 +33,6 @@ git push -u origin shivani // when i wnat to push shivani branch
 git branch -D <branch to be deleted>   //deleted the branch locally
 git push origin --delete <branch name>
 
+#for force push
+git push origin main --force
+
