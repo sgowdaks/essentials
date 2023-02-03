@@ -21,6 +21,8 @@
    each path from val is taken, and inide val folder we are extracting the 2nd feild, then we are checking if the feild is alredy created, if not we will create else      we wont, echo is just prinitng the path. 
 * `cut -f2 data/orig/english_dataset/UC_berkley/dataset_validation.tsv | sort |  uniq -c` -> cuts and gets 2nd charecter (cuts default on tab) sort and then get unique values (will give you count)
 * ` paste diet_tracking_food.txt output.tsv | sed 's/\r//g' > main_output.tsv` -> place 2 files side by side and remove the '\r'
+* `sed -i '1d' file.tsv` -> to remove the first line in a tsv file
+* 
    
    
 ## ssh
