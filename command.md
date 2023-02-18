@@ -22,7 +22,7 @@
 * `cut -f2 data/orig/english_dataset/UC_berkley/dataset_validation.tsv | sort |  uniq -c` -> cuts and gets 2nd charecter (cuts default on tab) sort and then get unique values (will give you count)
 * ` paste diet_tracking_food.txt output.tsv | sed 's/\r//g' > main_output.tsv` -> place 2 files side by side and remove the '\r'
 * `sed -i '1d' file.tsv` -> to remove the first line in a tsv file
-* 
+* `sudo chown -Rv sg:sg combo-actual6langs` -> changing the ownership of the folder
    
    
 ## ssh
