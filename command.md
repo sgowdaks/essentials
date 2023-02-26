@@ -23,6 +23,8 @@
 * ` paste diet_tracking_food.txt output.tsv | sed 's/\r//g' > main_output.tsv` -> place 2 files side by side and remove the '\r'
 * `sed -i '1d' file.tsv` -> to remove the first line in a tsv file
 * `sudo chown -Rv sg:sg combo-actual6langs` -> changing the ownership of the folder
+* `gpustat -cpu` -> show all the process that is currently running
+* `sudo pkill -f <name>` -> kill the process with name 
    
    
 ## ssh
