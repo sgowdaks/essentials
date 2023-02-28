@@ -26,7 +26,6 @@
 * `gpustat -cpu` -> show all the process that is currently running
 * `sudo pkill -f <name>` -> kill the process with name 
    
-   
 ## ssh
 * `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
 * `scp -r sks@****:/home/**/ .` = for downloading files inside directory, from server.
@@ -35,6 +34,10 @@
 * `Host dvbx
   User sg
   HostName 192.000.0.000 `  -> creating alias in your config file
+  
+## Docker
+* `docker container ls` -> lists all the docker files
+* ` docker stop <CONTAINER ID>` -> remove a running container
   
 
 
@@ -49,7 +52,6 @@ NF -> number of feilds
 * `head shuf_output.txt  | awk -F '/' '{print $0}'` -> prints everything in first feild
 * `head shuf_output.txt  | awk -F '/' '{print $1}'` -> prints everything in second feild
 * `cat output_vilt_single_label.txt | awk -v ORS='' '{print $0, NR % 2 ? "\t": "\n"}'  | sed 's/predicted answer:  //;s/actual answer : //' > output_vilt_single_label.tsv` -> converts (pred = "" (nextline) ground = "") to tab seperated format.   
-
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
