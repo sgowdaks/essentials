@@ -37,7 +37,7 @@
   
 ## Docker
 * `docker container ls` -> lists all the docker files
-* ` docker stop <CONTAINER ID>` -> remove a running container
+* `docker stop <CONTAINER ID>` -> remove a running container
   
 
 
