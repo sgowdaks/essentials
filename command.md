@@ -25,6 +25,7 @@
 * `sudo chown -Rv sg:sg combo-actual6langs` -> changing the ownership of the folder
 * `gpustat -cpu` -> show all the process that is currently running
 * `sudo pkill -f <name>` -> kill the process with name 
+* `ssh -L <port number>:localhost:<port number> dvbx` -> binding a port number in server to local machine (port forwarding) 
    
 ## ssh
 * `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
