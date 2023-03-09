@@ -26,6 +26,7 @@
 * `gpustat -cpu` -> show all the process that is currently running
 * `sudo pkill -f <name>` -> kill the process with name 
 * `ssh -L <port number>:localhost:<port number> dvbx` -> binding a port number in server to local machine (port forwarding) 
+* `for dir in */; do cat "$dir"/*.txt > "${dir%/}_overall.txt"; done` -> combining files inside every folder to a singel file `%/`  removes the trailing slash from the value of the dir
    
 ## ssh
 * `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
