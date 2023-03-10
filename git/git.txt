@@ -10,7 +10,8 @@ git config --list
 git init
 <to set up .git>
 git status
-git add .
+git add . (do not use git add . , its bad, so use git status -s, which shows all that is modified, added, deleted make sure all are correct and only the added and modified should go into the git folder)
+git rm --cached -r <file_name> -> if you have added a file by mistake to commit, and you want to remove it, you use this command to remove that file from commit
 git commit -m "commiting to the File"
 git log
 
