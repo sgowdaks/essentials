@@ -73,7 +73,7 @@ NF -> number of feilds
   * `gpustat`
 * `free -h` -> RAM in computer
 * `df -h` -> for memory available
-* `export CUDA_VISIBLE_DEVICES=1`  -> to set a particular GPU machine
+* `export CUDA_VISIBLE_DEVICES=<dive number(0/1/2)`  -> to set a particular GPU machine
 
 ## Emacs
 * `ctrl X + ctrl s` -> to save a file
