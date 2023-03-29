@@ -41,9 +41,6 @@
 * `docker container ls` -> lists all the docker files
 * `docker stop <CONTAINER ID>` -> remove a running container
   
-
-
- 
 ## awk
 NR -> number of record
 $0 -> literally prints that line itself
@@ -54,6 +51,8 @@ NF -> number of feilds
 * `head shuf_output.txt  | awk -F '/' '{print $0}'` -> prints everything in first feild
 * `head shuf_output.txt  | awk -F '/' '{print $1}'` -> prints everything in second feild
 * `cat output_vilt_single_label.txt | awk -v ORS='' '{print $0, NR % 2 ? "\t": "\n"}'  | sed 's/predicted answer:  //;s/actual answer : //' > output_vilt_single_label.tsv` -> converts (pred = "" (nextline) ground = "") to tab seperated format.   
+* `awk -v col=<new column number (colum no. begins with 1)> -v val="<column value>" 'BEGIN {FS=OFS="\t"} {$col=val; print}' data.tsv` -> awk command to add a new couln to a existing file
+* `awk 'BEGIN {OFS="\t"} {print $0, "X", "Y"}' data.tsv` -> awk command to add 2 new columns seprated by tab, add column at the end.
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
