@@ -28,6 +28,7 @@
 * `ssh -L <port number>:localhost:<port number> dvbx` -> binding a port number in server to local machine (port forwarding) 
 * `for dir in */; do cat "$dir"/*.txt > "${dir%/}_overall.txt"; done` -> combining files inside every folder to a singel file `%/`  removes the trailing slash from the value of the dir
 * `sort <input_file> | uniq > <output_file>` ->  remove duplicates in a file
+* `sed -i 's/\r//' filename` -> remove the carrys in a file inplace
    
 ## ssh
 * `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
