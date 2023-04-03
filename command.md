@@ -56,6 +56,7 @@ NF -> number of feilds
 * `awk -v col=<new column number (colum no. begins with 1)> -v val="<column value>" 'BEGIN {FS=OFS="\t"} {$col=val; print}' data.tsv` -> awk command to add a new couln to a existing file
 * `awk 'BEGIN {OFS="\t"} {print $0, "X", "Y"}' data.tsv` -> awk command to add 2 new columns seprated by tab, add column at the end.
 * `awk '{printf "%.0f\n", $1}' file.txt` -> command  to convert the first feild float to int
+* `shuf input.tsv | tee >(awk 'NR <= 10000' > output1.tsv) | awk 'NR > 10000' > output2.tsv` -> shuffel the file and put the first 1000 to one directory and the rest to another file. `tee` command for changing the process from shuffel to awk, NR (no. of records) 
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
