@@ -58,6 +58,8 @@ NF -> number of feilds
 * `awk '{printf "%.0f\n", $1}' file.txt` -> command  to convert the first feild float to int
 * `shuf input.tsv | tee >(awk 'NR <= 10000' > output1.tsv) | awk 'NR > 10000' > output2.tsv` -> shuffel the file and put the first 1000 to one directory and the rest to another file. `tee` command for changing the process from shuffel to awk, NR (no. of records) 
 * `awk -F '\t' 'BEGIN {OFS = FS} { $2=int($2); print }' dataset_validation.tsv > validation.tsv` -> in a tsv file convert 2nd field float to int
+* `awk -F '\t' 'BEGIN {OFS = FS} {print "[\047salad\047, \047smoothie\047, \047sandwich\047]"}' one_majority_smoothie.tsv > one_majority_smoothie1.tsv `
+* `paste one_majority_smoothie.tsv one_majority_smoothie1.tsv  > one_majority_smoothie2.tsv`
 
 ## Tmux
 * `Ctrl b + 0/1/2/3...` -> to switch windows in one session
