@@ -38,6 +38,7 @@
 * `Host dvbx
   User sg
   HostName 192.000.0.000 `  -> creating alias in your config file
+* `lsof -i :5000` -> list of process with 5000 port number
   
 ## Docker
 * `docker container ls` -> lists all the docker files
