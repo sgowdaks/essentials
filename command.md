@@ -30,6 +30,7 @@
 * `sort <input_file> | uniq > <output_file>` ->  remove duplicates in a file
 * `sed -i 's/\r//' filename` -> remove the carrys in a file inplace
 * `split -a 4 -d --additional-suffix=.txt -l 10000 output.1M.txt data-parts/part-` -> (-a 4: specifies the suffix length to be 4 characters long, -d: should be a numeric suffixes, should be in .txt format, each should consists 10000 lines, and output.1M.txt is the file to be used, should go inside the folder data-parts/parts-)
+* `cat output.shuf.txt | awk 'NF>=5' | head -1000000` -> sentences with more than 5 words and only the first 1 million lines.
    
 ## ssh
 * `scp berkley_data.tsv dvbx:/home/sg/work/ps/data` -> for copying a file my local to remote machine
