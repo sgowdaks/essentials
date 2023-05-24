@@ -83,6 +83,7 @@ NF -> number of feilds
 * `free -h` -> RAM in computer
 * `df -h` -> for memory available
 * `export CUDA_VISIBLE_DEVICES=<dive number(0/1/2)`  -> to set a particular GPU machine
+* `ncdu`
 
 ## Emacs
 * `ctrl X + ctrl s` -> to save a file
