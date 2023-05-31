@@ -74,6 +74,7 @@ NF -> number of feilds
 * `Ctrl b + left/right arrow` -> to switch bwt panels
 * `Ctrl b + [` -> starts scrolling, and up and down arrow, `q` -> to quit
 * `Ctrl b + Ctrl left/right` -> to window resize
+* `tmux kill-session -t 1` -> kill the tmux session 1
 
 ## Monetering resources
 * Moniter CPU  -> `htop`
