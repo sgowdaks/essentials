@@ -93,8 +93,12 @@ NF -> number of feilds
 ## Code server
 `ctrl+shift+p` -> to open command pannel in code server
 
-## tar, gunzip and untar, unzip file
-* `tar -cvzf <to be named as>.tar.gz <file path/name>`
-* `gunzip filename.tar.gz`
-* `tar -xvf filename.tar`
+## File Compression 
+`tar -c --use-compress-program="pigz -8 -p <no. of cpu cores>" -f archive.tar.gz directory` -> highest compression with parallel compression (pigz)
+
+   ### tar, gunzip and untar, unzip file
+   * `tar -cvzf <to be named as>.tar.gz <file path/name>`
+   * `gunzip filename.tar.gz`
+   * `tar -xvf filename.tar`
+  
 
