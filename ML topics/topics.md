@@ -5,8 +5,13 @@
 * <a href="https://www.youtube.com/watch?v=EuBBz3bI-aA&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=6"> Bias and Variance </a>
 * <a href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=7">ROC and AUC </a>
 
-### Supervise machine learning 
+### Supervised machine learning 
 * <a href="https://www.youtube.com/watch?v=sca5rQ9x1cA&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=4"> Regression </a>
 * <a href="https://www.youtube.com/watch?v=hh6gE0LxfO8&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=5"> Classifiaction </a>
+
+### Unsupervised machine learning 
+* <a href="https://www.youtube.com/watch?v=gG_wI_uGfIE&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=6"> Clustering </a>
+
+
 
 
