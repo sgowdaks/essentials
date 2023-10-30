@@ -18,6 +18,7 @@
 * <a href="https://www.youtube.com/watch?v=CFN5zHzEuGY&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=11"> Cost function </a>
 * <a href="https://www.youtube.com/watch?v=WtlvKq_zxPI&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=15"> Gradient Descent </a>
 * <a href="https://www.youtube.com/watch?v=k0h8emRAAHE&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=18"> Learning Rate </a>
+* <a href="https://www.youtube.com/watch?v=jXg0vU0y1ak&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=21"> Linear Regression With Multiple Feature </a>
 
 
 
