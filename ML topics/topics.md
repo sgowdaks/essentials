@@ -12,6 +12,10 @@
 ### Unsupervised machine learning 
 * <a href="https://www.youtube.com/watch?v=gG_wI_uGfIE&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=6"> Clustering </a>
 
+### Regression
+* <a href="https://www.youtube.com/watch?v=dLc-lfEEYss&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=9"> Linear Regression </a>
+
+
 
 
 
