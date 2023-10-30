@@ -1,1 +1,1 @@
-* hello
+Machine learning fundamentals: <a href="https://www.youtube.com/watch?v=fSytzGwwBVw&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=2"> Cross validation </a>,  <a href="https://www.youtube.com/watch?v=Kdsp6soqA7o&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=3"> confusion matrix </a>
