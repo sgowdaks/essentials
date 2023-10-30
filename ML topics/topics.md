@@ -16,6 +16,7 @@
 * <a href="https://www.youtube.com/watch?v=dLc-lfEEYss&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=9"> Linear Regression Intro</a>
 * <a href="https://www.youtube.com/watch?v=KWULpBYzIYk&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=11"> Linear Regression Model</a>
 * <a href="https://www.youtube.com/watch?v=CFN5zHzEuGY&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=11"> Cost function </a>
+* <a href="https://www.youtube.com/watch?v=WtlvKq_zxPI&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI&index=15"> Gradient Descent </a>
 
 
 
