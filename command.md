@@ -47,6 +47,7 @@
 ## Docker
 * `docker container ls` -> lists all the docker files
 * `docker stop <CONTAINER ID>` -> remove a running container
+* ` docker run --gpus '"device=0"' -it <docker image>` to mount GPU's from host/local to docker image
   
 ## awk
 NR -> number of record
