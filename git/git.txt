@@ -38,3 +38,10 @@ git reset --hard HEAD --> don't want to commit the changes but discard them
 #for force push
 git push origin main --force
 
+#For pulling reuesting from main/any branch and mergeing it
+git checkout <main>
+git pull origin <main>
+git checkout shivani
+git merge <main>
+git push origin shivani
+
