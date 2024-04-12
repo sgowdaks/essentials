@@ -45,6 +45,8 @@ git checkout shivani
 git merge <main>
 git push origin shivani
 
+
+## when your online account is not upto date with the main online branch
 git remote -v -> view all remote repository
 git remote add <origin name that you want to give> <ssh link for that repo> -> add new origin
 git pull <origin that you want to gave> <main branch name> -> pull from the new origin branch name
