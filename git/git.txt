@@ -45,3 +45,11 @@ git checkout shivani
 git merge <main>
 git push origin shivani
 
+git remote -v -> view all remote repository
+git remote add <origin name that you want to give> <ssh link for that repo> -> add new origin
+git pull <origin that you want to gave> <main branch name> -> pull from the new origin branch name
+git push origin <master/main branch name> -> push it to your online branch name
+
+
+
+
