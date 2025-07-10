@@ -9,6 +9,31 @@
 ## Install Docker
 * https://docs.docker.com/engine/install/ubuntu/
 
+## Create Docker Image
+
+Docker Script
+```
+# Use a base image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy the script into the container
+COPY app.py .
+
+# Define the command to run the script
+CMD ["python", "app.py"] 
+
+```
+
+* Create a Dockerfile: `touch Dockerfile` and add the above script into the docker file
+* create a simple hello world python file: `app.py`
+  
+
+
+
+
 
 
 
