@@ -6,6 +6,9 @@
  * Activate Conda: `source ~/miniconda3/bin/activate`
  * conda initilization: `conda init`
 
+## Install Docker
+* https://docs.docker.com/engine/install/ubuntu/
+
 
 
 
