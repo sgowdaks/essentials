@@ -31,8 +31,8 @@ CMD ["python", "app.py"]
 * Create a simple hello world python file: `app.py`
 * Add Your User to the Docker Group: `sudo usermod -aG docker $USER`
 * Build docker image: `docker build -t my-python-app .`
-* Run docker container: `docker run my-python-app`
-* Start the container: `docker run -it your_image_name`
+* Run docker container: `docker run my-python-app` (non interative)
+* Run the container: `docker run -it ymy-python-app` (interactive)
 * List running container: `docker ps`
 * List running container that has completed excecuted: `docker ps -a`
 * Docker Images: `docker images`
