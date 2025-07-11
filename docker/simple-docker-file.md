@@ -1,3 +1,25 @@
+# Docker Architecture
+
+```
++----------------------------+
+|     User Applications     |  ← e.g., Docker CLI, VS Code, Chrome
++----------------------------+
+|     Operating System      |  ← Windows, Linux, macOS
++----------------------------+
+|          Kernel           |  ← Manages CPU, memory, I/O, etc.
++----------------------------+
+|         BIOS/UEFI         |  ← Firmware that boots the system
++----------------------------+
+|         Hardware          |  ← CPU, RAM, Disk, etc.
++----------------------------+
+
+```
+
+* Docker runs on top of the OS, but it talks directly to the kernel to create and manage containers.
+* It uses the kernel (especially Linux kernel features like namespaces and cgroups) to isolate containers.
+* On Linux, Docker uses the host’s kernel directly.
+* On Windows/macOS, Docker runs a lightweight Linux VM (via WSL2 or HyperKit) because containers need a Linux-compatible kernel.
+
 # Docker simple file creation
 
 ## Install Python 
