@@ -28,7 +28,14 @@ CMD ["python", "app.py"]
 ```
 
 * Create a Dockerfile: `touch Dockerfile` and add the above script into the docker file
-* create a simple hello world python file: `app.py`
+* Create a simple hello world python file: `app.py`
+* Add Your User to the Docker Group: `sudo usermod -aG docker $USER`
+* Build docker image: `docker build -t my-python-app .`
+* Run docker container: `docker run my-python-app`
+* Start the container: `docker run -it your_image_name`
+* List running container: `docker ps`
+* List running container that has completed excecuted: `docker ps -a`
+
   
 
 
