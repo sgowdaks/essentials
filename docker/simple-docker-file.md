@@ -35,6 +35,7 @@ CMD ["python", "app.py"]
 * Start the container: `docker run -it your_image_name`
 * List running container: `docker ps`
 * List running container that has completed excecuted: `docker ps -a`
+* Docker Images: `docker images`
 
   
 
