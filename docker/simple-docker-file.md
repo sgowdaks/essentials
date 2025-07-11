@@ -36,6 +36,7 @@ CMD ["python", "app.py"]
 * List running container: `docker ps`
 * List running container that has completed excecuted: `docker ps -a`
 * Docker Images: `docker images`
+* Keeps running the short docker: `docker run -it --name cranky_proskuriakova my-python-app tail -f /dev/null`
 
   
 
