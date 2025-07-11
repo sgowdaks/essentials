@@ -60,6 +60,7 @@ CMD ["python", "app.py"]
 * Docker Images: `docker images`
 * Keeps running the short docker: `docker run -it --name <container name> my-python-app tail -f /dev/null`
 * Docker command to get into the conatiner: `docker exec -it <container name> /bin/bash`
+*  Docker port mapping from container 8080 to local machine 80: `docker run -d -p 8080:80 simple-webapp`
 
   
 
