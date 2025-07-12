@@ -20,6 +20,10 @@
 * On Linux, Docker uses the host’s kernel directly.
 * On Windows/macOS, Docker runs a lightweight Linux VM (via WSL2 or HyperKit) because containers need a Linux-compatible kernel.
 
+
+#Docker client-server architecture
+ 
+
 # Docker simple file creation
 
 ## Install Python 
