@@ -33,7 +33,7 @@
 
 ## Create Docker Image
 
-Docker Script
+Sample Docker Script
 ```
 # Use a base image
 FROM python:3.9-slim
@@ -48,6 +48,7 @@ COPY app.py .
 CMD ["python", "app.py"] 
 
 ```
+## Docker Commands
 
 * Create a Dockerfile: `touch Dockerfile` and add the above script into the docker file
 * Create a simple hello world python file: `app.py`
