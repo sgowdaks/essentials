@@ -63,6 +63,9 @@ CMD ["python", "app.py"]
 *  Docker port mapping from container 8080 to local machine 80: `docker run -d -p 8080:80 simple-webapp`
 *  Docker container stop: `docker stop <container name`
 
+
+
+
   
 
 
