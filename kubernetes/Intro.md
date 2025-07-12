@@ -18,10 +18,4 @@ Kubernetes provides native support for managing secrets and configuration separa
 Kubernetes integrates with tools like Prometheus, Grafana, and Fluentd for logging, monitoring, and alerting.
 ## 🧩 7. Ecosystem & Extensibility
 Kubernetes has a vast ecosystem (Helm, Operators, CRDs) and is cloud-agnostic, making it easier to deploy across AWS, Azure, GCP, or on-prem.
-🧪 When to Use Docker Compose vs Kubernetes
-Use Case	Docker Compose	Kubernetes
-Local development	✅ Simple and fast	✅ With Minikube or Kind
-Production deployment	🚫 Not recommended	✅ Designed for it
-Multi-host orchestration	🚫	✅
-Auto-scaling & self-healing	🚫	✅
-Complex microservices	🚫	✅
+
