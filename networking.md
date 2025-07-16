@@ -26,3 +26,14 @@ Once complete, all further communication is encrypted using the shared session k
 * Registered Ports (1024–49151): Assigned to user processes or applications. Examples include Microsoft SQL Server (1433), MySQL (3306), and RDP (3389).
 
 * Dynamic/Private Ports (49152–65535): Not assigned by IANA. Used for ephemeral or temporary connections, often by client-side applications.
+
+# HTTP vs HTTPS (Application Layer)
+
+Feature	HTTP vs	HTTPS
+
+| Feature | HTTP | HTTPS |
+|---|---|---|
+| Encryption | No encryption — data is sent in plaintext. | Encrypted using SSL/TLS. |
+| Handshake Extension | No additional steps. | ✅ After TCP handshake, a TLS handshake occurs:<br>• ClientHello (includes supported ciphers, random number)<br>• ServerHello (includes certificate, chosen cipher)<br>• Key exchange and session key generation<br>• Secure channel established |
+
+
