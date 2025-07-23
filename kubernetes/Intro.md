@@ -22,6 +22,7 @@ Kubernetes has a vast ecosystem (Helm, Operators, CRDs) and is cloud-agnostic, m
 # Kubernetes example that runs flask in the backend and retrives data from a database
 
 Your Application Components:
+
 Flask Server: This is your application's "brain" that handles requests and serves data.
 
 Database: This is where your application's data is stored.
