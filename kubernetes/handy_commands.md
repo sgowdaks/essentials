@@ -5,6 +5,8 @@
 * https://youtu.be/X48VuDVv0do?si=W-psogDaPWw1eESV
 * https://devopscube.com/kubernetes-architecture-explained/
 
+
+##Azure
 * https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/logs/capture-tcp-dump-linux-node-aks
 * https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli
 * https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/connectivity/connection-issues-application-hosted-aks-cluster#inside-out-troubleshooting
