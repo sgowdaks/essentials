@@ -11,3 +11,7 @@ GROUP BY → Group the remaining rows
 HAVING → Filter groups
 
 SELECT → Return final results
+
+
+1. EXTRACT(part FROM date_value)
+
