@@ -15,3 +15,5 @@ SELECT → Return final results
 
 1. EXTRACT(part FROM date_value)
 
+
+https://sqlguroo.com/
