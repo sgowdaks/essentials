@@ -1,6 +1,13 @@
-SQL notes
+## SQL notes
 
-* `Distinct` -> to select distinct
-* `select * from user Order by id ASC` -> order by to sort it
-* `lenght` -> to count number of charecters
-* 
+SQL executions:
+
+FROM → Load the data
+
+WHERE → Filter individual rows
+
+GROUP BY → Group the remaining rows
+
+HAVING → Filter groups
+
+SELECT → Return final results
