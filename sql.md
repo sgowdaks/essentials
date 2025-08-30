@@ -102,5 +102,7 @@ SELECT year,
 -- SELECT * FROM usa_gdp WHERE year < 1970;
 
 ```
+What Is LAG() in SQL?
+LAG(column) OVER (ORDER BY ...) is a window function that lets you peek at the value from a previous row — without doing a self-join.
 
 
