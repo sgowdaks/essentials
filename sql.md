@@ -56,3 +56,26 @@ LEFT JOIN orders
 ON orders.order_id = newtable.order_id
 GROUP BY orders.status;
 ```
+
+https://sqlguroo.com/question/13
+
+```
+select tmp.order_id
+
+from  
+(
+SELECT orders.order_id as order_id, order_details.product_id as product_id
+FROM orders
+LEFT JOIN order_details
+ON orders.order_id = order_details.order_id 
+) 
+  
+as tmp
+left join product_detail
+on tmp.product_id = product_detail.product_id
+GROUP BY tmp.order_id 
+order by sum(product_detail.weight) DESC
+LIMIT 3
+```
+
+
