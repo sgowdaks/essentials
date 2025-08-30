@@ -17,3 +17,42 @@ SELECT → Return final results
 
 
 https://sqlguroo.com/
+
+1. https://sqlguroo.com/question/12
+
+```
+SELECT 
+  newtable.name,
+  COUNT(DISTINCT  CASE WHEN orders.status = 'processed' THEN 1 END) AS processed_orders,
+  COUNT(DISTINCT CASE WHEN orders.status = 'pending' THEN 1 END) AS pending_orders,
+  COUNT(DISTINCT CASE WHEN orders.status = 'shipped' THEN 1 END) AS shipped_orders,
+  COUNT(DISTINCT CASE WHEN orders.status = 'cancelled' THEN 1 END) AS cancelled_orders
+FROM (
+SELECT 
+    product_detail.product_name AS name, 
+    order_details.order_id AS order_id 
+  FROM product_detail 
+  INNER JOIN order_details 
+    ON order_details.product_id = product_detail.product_id 
+  WHERE product_detail.product_name = 'Green Leaf Lettuce'
+) AS newtable
+LEFT JOIN orders  
+  ON orders.order_id = newtable.order_id
+GROUP BY newtable.name;
+
+```
+if no pivotal table was required 
+
+```
+SELECT orders.status, COUNT(*) AS count
+FROM (
+  SELECT order_details.order_id
+  FROM product_detail
+  INNER JOIN order_details
+  ON order_details.product_id = product_detail.product_id
+  WHERE product_detail.product_name = 'Green Leaf Lettuce'
+) AS newtable
+LEFT JOIN orders
+ON orders.order_id = newtable.order_id
+GROUP BY orders.status;
+```
