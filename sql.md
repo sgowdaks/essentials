@@ -78,4 +78,29 @@ order by sum(product_detail.weight) DESC
 LIMIT 3
 ```
 
+https://sqlguroo.com/question/15
+
+```
+-- SELECT curr.year as year,  ROUND(((curr.gdp - prev.gdp) / prev.gdp) * 100, 2)  as yoy
+-- from usa_gdp as curr
+-- join usa_gdp as prev
+-- on curr.year = prev.year + 1
+-- where curr.year between 1970 and 1980
+
+-- select year, 
+--  ROUND(((gdp - LAG(gdp) OVER (ORDER BY year))/LAG(gdp) OVER (ORDER BY year))*100, 2) as yoy
+-- from usa_gdp
+-- where year between 1970 and 1980
+
+SELECT year, 
+  yoy_growth FROM 
+  
+  (SELECT *, CONCAT(ROUND(((gdp-LAG(gdp) OVER(ORDER BY year))*100)/LAG(gdp) OVER(ORDER BY year), 2), '%') 
+  AS yoy_growth FROM usa_gdp ) AS XY 
+  WHERE year BETWEEN 1970 AND 1980
+
+-- SELECT * FROM usa_gdp WHERE year < 1970;
+
+```
+
 
