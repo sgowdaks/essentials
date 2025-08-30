@@ -133,6 +133,18 @@ GROUP by product_name
 HAVING COUNT(DISTINCT sale_month) > 6;
 ```
 
+```
+SELECT customer_id
+FROM (
+  SELECT customer_id, order_date,
+         ROW_NUMBER() OVER (ORDER BY order_date DESC) AS rn
+  FROM orders
+  WHERE EXTRACT(YEAR FROM order_date) = 2020
+    AND EXTRACT(MONTH FROM order_date) = 7
+) AS ranked
+WHERE rn = 2;
+```
+
  
 
 
