@@ -23,10 +23,10 @@ https://sqlguroo.com/
 ```
 SELECT 
   newtable.name,
-  COUNT(DISTINCT  CASE WHEN orders.status = 'processed' THEN 1 END) AS processed_orders,
-  COUNT(DISTINCT CASE WHEN orders.status = 'pending' THEN 1 END) AS pending_orders,
-  COUNT(DISTINCT CASE WHEN orders.status = 'shipped' THEN 1 END) AS shipped_orders,
-  COUNT(DISTINCT CASE WHEN orders.status = 'cancelled' THEN 1 END) AS cancelled_orders
+  COUNT(DISTINCT  CASE WHEN orders.status = 'processed' THEN newtable.order_id END) AS processed_orders,
+  COUNT(DISTINCT CASE WHEN orders.status = 'pending' THEN newtable.order_id END) AS pending_orders,
+  COUNT(DISTINCT CASE WHEN orders.status = 'shipped' THEN newtable.order_id  END) AS shipped_orders,
+  COUNT(DISTINCT CASE WHEN orders.status = 'cancelled' THEN newtable.order_id END) AS cancelled_orders
 FROM (
 SELECT 
     product_detail.product_name AS name, 
