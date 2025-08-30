@@ -145,7 +145,39 @@ FROM (
 WHERE rn = 2;
 ```
 
- 
+Aggregate Window Functions
+These apply aggregate logic across a moving window of rows:
+
+Function	Description
+SUM()	Running total across a partition
+AVG()	Moving average
+COUNT()	Row count within a window
+MIN()	Minimum value in the window
+MAX()	Maximum value in the window
+
+Ranking Window Functions
+Used to assign ranks or positions within partitions:
+
+Function	Description
+ROW_NUMBER()	Sequential row number (no ties)
+RANK()	Rank with gaps for ties
+DENSE_RANK()	Rank without gaps for ties
+NTILE(n)	Divides rows into n buckets
+🔁 Value-Based Window Functions
+These let you access values from other rows relative to the current one:
+
+Function	Description
+LAG()	Value from a previous row
+LEAD()	Value from a following row
+FIRST_VALUE()	First value in the window
+LAST_VALUE()	Last value in the window
+NTH_VALUE(n)	nth value in the window
+
+Statistical & Distribution Functions (engine-dependent)
+Function	Description
+PERCENT_RANK()	Relative rank as a percentage
+CUME_DIST()	Cumulative distribution
+
 
 
 
