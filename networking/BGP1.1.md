@@ -8,7 +8,7 @@ Control Plane: The "Brain." This is where the routing protocols (OSPF, BGP) live
 Data Plane: The "Muscle." Also called the Forwarding Plane. Once the Control Plane says "Send traffic for Google to Port 5," the Data Plane handles the actual electrical/optical switching of packets at lightning speed.
 
 # The Control Plane 
-Is the "brain" of the router. In a Comcast Seattle router, this is literally a specialized CPU running a multitasking operating system (like Cisco IOS, Juniper Junos, or Nokia SROS).Inside this Control Plane, the Link-State protocol (OSPF or IS-IS) performs its three-step job:
+Is the "brain" of the router. In a Comcast Seattle router, this is literally a specialized CPU running a multitasking operating system (like Cisco IOS, Juniper Junos, or Nokia SROS). Inside this Control Plane, the Link-State protocol (OSPF or IS-IS) performs its three-step job:
 
 * LSA Exchange (The Gossip): The router sends and receives Link-State Advertisements (LSAs) through its ports.
 * The LSDB (The Map): It stores all those LSAs in a Link-State Database. This is the "full map" we talked about.
