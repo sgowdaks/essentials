@@ -77,4 +77,4 @@ As the network grows from 4 routers in Tacoma to 4,000 across the USA, Comcast u
 | **Control** | **CPU / Memory** | **Convergence Time** slows down; router might crash during a BGP "storm." |
 | **Data** | **Throughput (Gbps)** | **Packet Loss** and latency; the router physically can't move the electricity fast enough. |
 
-**Would you like me to dive into a specific part of this flow, like how "Route Aggregation" works or the math behind the OSPF "Cost" metric?**
+
