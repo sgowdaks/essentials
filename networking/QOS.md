@@ -34,5 +34,3 @@ DiffServ is the **soft QoS** model and is the standard for modern enterprise net
 * **Pros:** Highly scalable. Routers don't need to remember individual flows; they just look at the label on the packet currently passing through.
 * **Cons:** It is "predictable" rather than "guaranteed." If you oversubscribe your "First Class" tier, performance will still degrade.
 
-
-**Would you like me to explain how "Marking" actually works inside the IP header so you can see where the priority labels live?**
