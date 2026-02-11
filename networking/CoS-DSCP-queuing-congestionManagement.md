@@ -232,9 +232,6 @@ Large packets (1500 bytes) can block small, sensitive voice packets.
 * **The Tradeoff:** To fix this on slow links, we use **LFI (Link Fragmentation and Interleaving)**. It breaks big packets into tiny pieces so voice can "cut in line" between them.
 * **The Failure:** LFI is CPU-intensive. On modern high-speed links (above 1Gbps), LFI actually causes more problems than it solves due to the processing overhead.
 
----
-
-**Would you like me to walk through a "Day in the Life of a Packet" to see exactly where these drops happen in the hardware pipeline?**
 
 
 
