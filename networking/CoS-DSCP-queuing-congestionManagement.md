@@ -191,6 +191,13 @@ Your router has two "planes" of existence:
 
 If I send 10,000 Pings (ICMP) per second to your router's IP address, the Data Plane can't just "switch" them. It has to hand them to the **Control Plane CPU** to answer. If the CPU is busy answering pings, it might miss an OSPF "Hello" packet from a neighbor. The neighbor thinks the router is dead, drops the connection, and your entire network reconverges (crashes).
 
+( The "Me" Traffic (Terminating Traffic)
+The Data Plane is designed to move traffic through the router. If a packet is addressed to the router’s own IP address, the ASIC doesn't have a "next hop" to send it to. The Ping Example: When you ping the router, the ASIC sees the destination IP matches its own interface. It can't "switch" the packet to another port, so it sends it to the CPU.
+
+The Process: The CPU must interrupt its routing calculations, open the ICMP packet, generate an ICMP Echo Reply, and send it back down to the Data Plane to be transmitted.
+
+The Risk: If I send 1 million pings, I am essentially forcing your CPU to stop doing "smart" work to answer "dumb" questions.)
+
 ### The Defense: CoPP (Control Plane Policing)
 
 CoPP treats the CPU like it's just another interface. We create a "filter" that says:
