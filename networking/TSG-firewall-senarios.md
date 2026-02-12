@@ -34,14 +34,25 @@ If you have access to the server, run `tcpdump` while you try to connect from yo
 **Run this on the server:**
 `tcpdump -ni any host <Your_Laptop_IP> and port 443`
 
-* **Scenario A: Silence.** You see nothing on the server screen.
-* **Verdict:** The packet is being killed by a **Network Firewall** (Azure NSG, AWS Security Group, or a physical hardware firewall) before it ever touches the server.
+They seem the same because, to the **client** (your laptop), the result is identical: the website doesn't load.
 
+However, the difference lies in **where the "Executioner" is standing**. One happens miles away from the server, and the other happens inside the server's own brain.
 
-* **Scenario B: You see the "SYN" arrive, but no "Reply" leaves.**
-* **Verdict:** The **Local Firewall** (Windows Firewall, `iptables`, `nftables`) is seeing the traffic and blocking it from the inside.
+### Scenario A: The Network Firewall (The "Outer Wall")
 
+Imagine the server is a king inside a castle. The **Network Firewall** (like an Azure NSG or a physical Cisco box) is the **Front Gate** a mile down the road.
 
+* **The Action:** You send a packet. The guards at the Front Gate look at the packet, see it’s not on the guest list, and throw it in the river.
+* **The Result on the Server:** The King (the Server) has no idea you even tried to visit. If you run a packet capture (`tcpdump`) on the server, the screen stays **blank**.
+* **Why this matters:** You can change the server's settings all day long, but it won't help. You must log into the **cloud provider** or call the **Network Admin** to fix this.
+
+### Scenario B: The Local Firewall (The "Bodyguard")
+
+In this scenario, the packet successfully passes the Front Gate and arrives at the Castle. It actually enters the server's network card.
+
+* **The Action:** The packet reaches the server's Operating System. But the server has its own internal "Bodyguard" (like `iptables`, `ufw`, or Windows Firewall). The Bodyguard sees the packet and says, "The Gate let you in, but I'm not letting you talk to the Web Server."
+* **The Result on the Server:** If you run `tcpdump`, you **WILL** see the "SYN" packet appear on the screen! You’ll see the server receive the request, but then... nothing happens. The server doesn't send a "SYN-ACK" back.
+* **Why this matters:** This proves the **Network** is fine. The "pipes" are working. The problem is 100% inside the server's own configuration. You don't need to check Azure; you need to check your `sudo ufw status`.
 
 ---
 
