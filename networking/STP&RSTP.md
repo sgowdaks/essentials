@@ -23,6 +23,8 @@ STP (defined as **IEEE 802.1D**) solves this by logically "breaking" the loop. I
 
 ### The Election Process
 
+([Refer to this to understand RSTP design topology](https://github.com/sgowdaks/essentials/blob/main/networking/RSTP-topology.md))
+
 1. **Elect a Root Bridge:** The switches talk to each other using **BPDUs** (Bridge Protocol Data Units). The switch with the lowest **Bridge ID** (Priority + MAC Address) becomes the "Root Bridge"—the center of the universe for that network.
 2. **Determine Root Ports:** Every other switch finds the "cheapest" path (lowest cost based on link speed) back to the Root Bridge.
 3. **Designated Ports:** On each segment, one port is chosen to forward traffic.
