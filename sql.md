@@ -12,6 +12,18 @@ HAVING → Filter groups
 
 SELECT → Return final results
 
+### Common Join Keywords
+
+If you want to join a table to itself, you must use one of these valid keywords:
+
+| Keyword | Use in a Self Join |
+| --- | --- |
+| **`INNER JOIN`** | Matches rows only where the condition (like `DATEDIFF`) is met. |
+| **`JOIN`** | In most SQL dialects, this is shorthand for `INNER JOIN`. |
+| **`LEFT JOIN`** | Includes all rows from `v1`, even if no matching `v2` (yesterday) exists. |
+| **`CROSS JOIN`** | Pairs every single row with every other row (rarely used for this problem). |
+
+---
 
 1. EXTRACT(part FROM date_value)
 
