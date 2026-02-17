@@ -12,6 +12,17 @@ HAVING → Filter groups
 
 SELECT → Return final results
 
+SQL order
+
+SELECT
+FROM
+JOIN
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+
+
 ### Common Join Keywords
 
 If you want to join a table to itself, you must use one of these valid keywords:
