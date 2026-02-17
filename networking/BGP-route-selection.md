@@ -86,3 +86,88 @@ In your **Seattle -> Colorado -> Chicago -> New York** example:
 * **OSPF** ensures Seattle can "see" New York (the Next-Hop).
 * **BGP Path Attributes** (like AS-Path) tell Seattle if the path through New York is better than a path through a different border router (say, one in Miami).
 * **Route Reflectors** ensure that these Path Attributes are passed from New York to Seattle without needing a direct physical or logical connection between them.
+
+---
+# Understanding path selection algorithm with senarious. 
+
+This is the "BGP Beauty Contest." To understand it, let's imagine a single router—we'll call it **Seattle**—that is trying to reach **Azure**.
+
+Seattle receives **8 different "offers"** (paths) for the same Azure prefix. BGP will walk through the list one by one. As soon as a path "loses" a round, it is eliminated.
+
+---
+
+### The Scenario: Seattle's 8 Options
+
+#### 1. Weight (Cisco Proprietary)
+
+* **The Logic:** This is your "I say so" button. It never leaves the router.
+* **The Example:** Seattle has two physical cables. You configure `neighbor [IP] weight 500` on Cable A and `300` on Cable B.
+* **Winner:** **Cable A** wins immediately. The rest of the list is ignored. If weights are equal (default is 0), move to step 2.
+
+#### 2. Local Preference
+
+* **The Logic:** How the whole company (AS) feels about an exit.
+* **The Example:** Your boss says, "We prefer the ExpressRoute over the VPN." You set Local Pref to **200** on the ExpressRoute and **100** on the VPN.
+* **Winner:** **ExpressRoute.** All routers in the AS will now prefer this exit. If equal, move to step 3.
+
+#### 3. Locally Originated
+
+* **The Logic:** "I know this place because it's in my backyard."
+* **The Example:** Seattle learns a route to Azure from New York, but Seattle *also* has a direct connection to an Azure edge node and uses the `network` command to claim it.
+* **Winner:** **Seattle's own route.** It trusts itself more than gossip from New York.
+
+#### 4. AS-Path Length
+
+* **The Logic:** The "Shortest distance between two points."
+* **The Example:** * Path A: `(AS 100, AS 8075)` — (2 hops)
+* Path B: `(AS 200, AS 300, AS 8075)` — (3 hops)
+
+
+* **Winner:** **Path A.** If lengths are the same, move to step 5.
+
+#### 5. Origin Type
+
+* **The Logic:** How did this route enter BGP? (Legacy attribute).
+* **The Ranking:** `IGP (i)` > `EGP (e)` > `Incomplete (?)`.
+* **The Example:** If one path was cleanly added via a `network` command (i) and the other was "redistributed" from a messy static route (?), the **IGP** one wins.
+
+#### 6. MED (Multi-Exit Discriminator)
+
+* **The Logic:** A suggestion from your neighbor (Azure) on which door to use.
+* **The Example:** Azure has two links to you. Azure sends a **MED of 10** on Link 1 and **MED of 20** on Link 2.
+* **Winner:** **Link 1** (Lowest wins). Note: This only works if both paths come from the *same* neighbor AS.
+
+#### 7. Neighbor Type (eBGP vs iBGP)
+
+* **The Logic:** "Information from a stranger is better than a rumor from a friend."
+* **The Example:** Seattle hears about Azure from an eBGP neighbor (direct connection) and from an iBGP neighbor (New York).
+* **Winner:** **eBGP.** It’s always better to take the exit right in front of you than to carry the packet across your own network.
+
+#### 8. IGP Metric to Next-Hop
+
+* **The Logic:** "Hot Potato Routing."
+* **The Example:** Both New York and LA are advertising Azure with identical attributes.
+* OSPF cost to New York: **100**
+* OSPF cost to LA: **20**
+
+
+* **Winner:** **LA.** Seattle wants the packet out of its hands as fast as possible.
+
+---
+
+### Summary Table for Quick Reference
+
+| Attribute | Winner | Scope |
+| --- | --- | --- |
+| **Weight** | Higher | Local Router only |
+| **Local Pref** | Higher | Entire AS |
+| **Local Orig** | Self | Local Router |
+| **AS-Path** | Shortest | Global |
+| **Origin** | IGP > ? | Global |
+| **MED** | Lower | Between two ASns |
+| **eBGP > iBGP** | eBGP | Local Router |
+| **IGP Metric** | Lower | Internal Network |
+
+### A Quick Trick to Remember
+
+Most real-world BGP issues are decided at **Local Preference** (Step 2), **AS-Path** (Step 4), or **IGP Metric** (Step 8). If you know those three, you can solve 90% of BGP routing problems.
