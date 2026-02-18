@@ -12,14 +12,14 @@ HAVING → Filter groups
 
 SELECT → Return final results
 
-SQL order
+## SQL order
 
-SELECT
-FROM
-JOIN
-WHERE
-GROUP BY
-HAVING
+SELECT |
+FROM |
+JOIN |
+WHERE |
+GROUP BY |
+HAVING |
 ORDER BY
 
 
