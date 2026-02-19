@@ -201,6 +201,73 @@ Function	Description
 PERCENT_RANK()	Relative rank as a percentage
 CUME_DIST()	Cumulative distribution
 
+--- 
+In a 1-year experience interview, you aren't expected to be a database administrator, but you **are** expected to know how to "clean" and "summarize" data.
+
+Here is a "Cheat Sheet" of the most common functions that will save your life during a technical screen.
+
+---
+
+### 1. The "Time Strippers" (Date/Time Functions)
+
+These are used to bucket data for trends or reports.
+
+| Function | What it does | Example Use Case |
+| --- | --- | --- |
+| **`HOUR(ts)`** | Extracts 0–23 | "Find the busiest hour of the day." |
+| **`DATE(ts)`** | Removes the time | "Calculate total daily traffic volume." |
+| **`DATEDIFF()`** | Difference between two dates | "How long was this circuit down?" |
+| **`NOW()`** | Gets the exact current time | "Filter for logs from the last 24 hours." |
+
+---
+
+### 2. The "Cleaners" (Data Quality Functions)
+
+Data from routers is often messy. These functions fix it.
+
+| Function | What it does | Why it’s handy |
+| --- | --- | --- |
+| **`COALESCE(val, 0)`** | Replaces `NULL` with `0` | If a sensor was off, don't let it break your math. |
+| **`ROUND(val, 2)`** | Limits decimal places | Makes "850.3333333" look like "850.33" for a report. |
+| **`TRIM(str)`** | Removes extra spaces | Fixes "Gig0/1 " (with a space) so it matches "Gig0/1". |
+| **`UPPER() / LOWER()`** | Forces case | Ensures "Core-R1" and "core-r1" are treated as the same device. |
+
+---
+
+### 3. The "Analyzers" (Aggregates & Logic)
+
+These are for when the boss wants a "Summary" rather than a "List."
+
+* **`DISTINCT`**: `SELECT COUNT(DISTINCT device_id)` — Tells you how many *unique* routers you have, ignoring duplicates.
+* **`CASE WHEN`**: This is like an `if/else` statement inside SQL.
+> *Example:* `CASE WHEN error_count > 100 THEN 'Critical' ELSE 'Normal' END as status`
+
+
+* **`SUM()` / `AVG()` / `MAX()**`: The "Big Three" for capacity planning.
+
+---
+
+### 4. The "Pro" Window Functions
+
+Mentioning these at the 1-year mark makes you look like a 3-year veteran.
+
+* **`LAG()`**: Look at the previous row (Rate of change).
+* **`LEAD()`**: Look at the next row.
+* **`RANK() OVER (ORDER BY traffic DESC)`**: Automatically numbers your devices from #1 to #10 based on usage.
+
+---
+
+### How to use this list in an interview
+
+If you get stuck on a question, use these as "building blocks."
+
+**Interviewer:** *"Find the total traffic for each day last week."*
+**You:** *"Okay, I'll use **DATE()** to group the timestamps into days, use **SUM()** for the traffic, and a **WHERE** clause with **NOW()** to limit it to the last 7 days."*
+
+Even if you don't write the code perfectly, **saying that sentence** proves you know exactly what tools to use.
+
+**Would you like me to give you a "Speed Round" of 3 quick questions to see if you can pick the right function for each?**
+
 
 
 
