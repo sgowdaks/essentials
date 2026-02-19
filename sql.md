@@ -264,9 +264,87 @@ If you get stuck on a question, use these as "building blocks."
 **Interviewer:** *"Find the total traffic for each day last week."*
 **You:** *"Okay, I'll use **DATE()** to group the timestamps into days, use **SUM()** for the traffic, and a **WHERE** clause with **NOW()** to limit it to the last 7 days."*
 
-Even if you don't write the code perfectly, **saying that sentence** proves you know exactly what tools to use.
+---
 
-**Would you like me to give you a "Speed Round" of 3 quick questions to see if you can pick the right function for each?**
+`DATEDIFF` is the "Swiss Army Knife" of SQL time math. It is much easier to remember than `EXTRACT(EPOCH...)` because it follows a simple pattern:
+**`DATEDIFF(unit, start_time, end_time)`**
+
+In an interview, if you use this, just clarify which database you're thinking of (SQL Server and MySQL use it slightly differently), but the logic remains the same.
+
+---
+
+### 1. Most Common Units
+
+You can swap the `'minute'` part for any of these to change the "zoom level" of your report:
+
+| Unit | Example | Why use it? |
+| --- | --- | --- |
+| **`'second'`** | `DATEDIFF('second', down, up)` | Measuring brief "flaps" or millisecond spikes. |
+| **`'minute'`** | `DATEDIFF('minute', down, up)` | Standard for reporting ISP or circuit downtime. |
+| **`'hour'`** | `DATEDIFF('hour', start, end)` | General maintenance window durations. |
+| **`'day'`** | `DATEDIFF('day', install_date, NOW())` | Calculating **"Hardware Age"** (How long has this router been active?). |
+
+---
+
+### 2. Handy "DATEDIFF" Interview Patterns
+
+#### A. The "Hardware Age" Check
+
+If an interviewer asks: *"How do we find all devices that are more than 5 years old?"*
+
+```sql
+SELECT device_id 
+FROM inventory 
+WHERE DATEDIFF('year', purchase_date, NOW()) >= 5;
+
+```
+
+#### B. The "Time Since Last Error"
+
+If they ask: *"Find interfaces that haven't had an error in the last 30 days."*
+
+```sql
+SELECT interface_id
+FROM logs
+GROUP BY interface_id
+HAVING DATEDIFF('day', MAX(error_timestamp), NOW()) > 30;
+
+```
+
+#### C. Detecting "Flapping" (Short Downtimes)
+
+If they ask: *"How do we find outages that lasted less than 60 seconds?"*
+
+```sql
+SELECT device_id, event_time
+FROM (
+   SELECT status, event_time, LEAD(event_time) OVER(...) as next_time
+   FROM device_status
+) 
+WHERE status = 'DOWN' 
+  AND DATEDIFF('second', event_time, next_time) < 60;
+
+```
+
+---
+
+### ⚠️ The "Gotcha" (MySQL vs. SQL Server)
+
+This is a tiny detail that makes you look very senior if you mention it:
+
+* **In SQL Server/Postgres:** `DATEDIFF(unit, start, end)`
+* **In MySQL:** `DATEDIFF(end, start)` (It only returns **days** by default). For minutes in MySQL, you use `TIMESTAMPDIFF(MINUTE, start, end)`.
+
+**Interview Tip:**
+If you can't remember which one the company uses, just say:
+
+> *"I'll use the DATEDIFF logic here to get the minute count. Depending on the SQL dialect, the syntax might be `DATEDIFF` or `TIMESTAMPDIFF`, but the goal is to find the delta between the 'DOWN' and 'UP' events."*
+
+### Ready for the "Outage Frequency" challenge?
+
+**The Question:** *"Find the `device_id` that had the highest **number of unique DOWN events** in the last 24 hours."* (Hint: You don't need `DATEDIFF` or `LEAD` for this one—it's a simpler function!)
+
+**Would you like to try writing that one?**
 
 
 
