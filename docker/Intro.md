@@ -2,15 +2,15 @@
 
 ```
 +----------------------------+
-|     User Applications     |  ← e.g., Docker CLI, VS Code, Chrome
+|     User Applications     |   ← e.g., Docker CLI, VS Code, Chrome
 +----------------------------+
-|     Operating System      |  ← Windows, Linux, macOS
+|     Operating System      |   
++----------------------------+ | -> OS
+|          Kernel           |   
 +----------------------------+
-|          Kernel           |  ← Manages CPU, memory, I/O, etc.
+|         BIOS/UEFI         |   ← Firmware that boots the system
 +----------------------------+
-|         BIOS/UEFI         |  ← Firmware that boots the system
-+----------------------------+
-|         Hardware          |  ← CPU, RAM, Disk, etc.
+|         Hardware          |   ← CPU, RAM, Disk, etc.
 +----------------------------+
 
 ```
