@@ -1,0 +1,50 @@
+Speeding up 
+
+
+-> Via parralelim and different kinds
+
+Training and inference
+
+1.Data parallelisum and disctubituted data parallelism (dp and ddp)
+2. Model paraleleisum
+  2.a -> pipeline paralellisum
+  2.b -> tensor and operator parallel
+  2.c -> expert parallel
+  2.d -> sequence parralelium
+
+3. Trade precessions for speed
+ * Fp32, FP16, BF16, FP8, FP4/NVfp4
+ * describes gpu flops for these and compare over nvidia and amd's GPU evolution in the past 5 years (performance table comparisions)
+ * FP8 (deepseek demonstaracted) (CS)
+ * Nvf4 link to nvidia announcement (CS)
+
+4. optimisizng the communication (Between the GPU's)
+* ring reduction
+* tree/herriarichal reduction
+* overlapping communication
+(CS) presnt progress made in past 5 generations of hardware 
+4.a: inter-gpu/intra-node: nvlink(Nvdia), xgmi (amd), PCI (open standard)
+4.b: inter-node : infinny band (nvidia), ethernet
+
+(going from fp32 -> fp8 , 75% cutoff)
+
+5. Fusing/fused kernals 
+5.a: Memory hierarchy: register, l1, l2 and RAM; speed vs size of different layer
+5.b: what happens inside GPU when you do a sequence of operation like matrix multiplication, and how data transfers, between register, cache and memory. ex: pick RMS norm implementation
+5.c: Fusing to reduce cache miss
+
+(cs) flash attention
+
+Last 5 generation progress regarding cache sizes (nvidia gpus)
+
+
+Case studies: 
+Deep speed and it's modes
+
+
+-> inference speed up
+
+1. Quantization
+2. 
+
+
