@@ -32,3 +32,11 @@ curl -X POST http://<public ip>/predict -H "Content-Type: application/json" -d '
 {"task_id":"0bf3a092-45ff-475e-9b76-2e40bc208bf2","status":"Pending"}
 
 curl http://<public ip>/result/YOUR_TASK_ID_HERE
+
+kubectl scale deployment/ml-model-deployment --replicas=0
+kubectl scale deployment/celery-worker-deployment --replicas=0
+kubectl scale deployment/redis-deployment --replicas=0
+
+kubectl scale deployment/ml-model-deployment --replicas=2
+kubectl scale deployment/celery-worker-deployment --replicas=2
+kubectl scale deployment/redis-deployment --replicas=1
