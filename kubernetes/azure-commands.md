@@ -1,10 +1,6 @@
-Create an ACR instance:
-
+# Create an ACR instance:
 az group create --name myMLOpsResourceGroup --location eastus
 az acr create --resource-group myMLOpsResourceGroup --name mymlopsregistry --sku Basic
-
-Log into your registry and push your ML image:
-
 
 # Log in to ACR via Azure CLI
 az acr login --name mymlopsregistry
@@ -23,3 +19,16 @@ az aks create \
     --node-vm-size standard_dc4ds_v3 \
     --generate-ssh-keys \
     --attach-acr mymlopsregistry
+
+az aks get-credentials --resource-group myMLOpsResourceGroup --name myMLOpsCluster
+# Verify you are pointing to Azure
+kubectl get nodes
+
+kubectl apply -f service.yaml
+# Wait a minute or two for the EXTERNAL-IP to provision
+kubectl get service ml-model-service --watch
+
+curl -X POST http://<public ip>/predict -H "Content-Type: application/json" -d '{"texts": ["Azure Kubernetes Service is finally working!", "I hate debugging bugs."]}'
+{"task_id":"0bf3a092-45ff-475e-9b76-2e40bc208bf2","status":"Pending"}
+
+curl http://<public ip>/result/YOUR_TASK_ID_HERE
