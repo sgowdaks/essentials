@@ -33,5 +33,8 @@ newgrp docker
 # 6. Test it (watch the spelling on this one!)
 docker ps
 
+docker build -t mymlopsregistry.azurecr.io/myapp:v1 .
+docker push mymlopsregistry.azurecr.io/myapp:v1
+
 ## Now you would have been able to login, if previously if were not able to login.
 
