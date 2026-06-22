@@ -26,7 +26,7 @@ az acr create \
     --resource-group myMLOpsResourceGroup \
     --name mymlopsregistry \
     --sku Premium \
-    --public-network-access false # Blocks all public internet traffic
+    --public-network-enabled false # Blocks all public internet traffic
 
 # 2. Create the Private Endpoint for ACR
 az network private-endpoint create \
