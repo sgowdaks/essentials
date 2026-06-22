@@ -37,3 +37,12 @@ docker ps
 docker build -t mymlopsregistry.azurecr.io/myapp:v1 .
 docker push mymlopsregistry.azurecr.io/myapp:v1
 
+
+
+sgowdaks@shivani-test:~/MLOps-projects/kubernetes$ curl -X POST http://localho
+st:8080/predict -H "Content-Type: application/json" -d '{"texts": ["Testing di
+rect VNet pod routing"]}'**1**
+
+ kubectl port-forward pod/ml
+-model-deployment-546979f9f9-7gtpk 8080:8000
+
